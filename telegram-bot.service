@@ -1,0 +1,16 @@
+[Unit]
+Description=Telegram Amazon Affiliate Bot
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/telegram-bot
+ExecStart=/home/pi/telegram-bot/bot-env/bin/python3 /home/pi/telegram-bot/bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
